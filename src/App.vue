@@ -1,13 +1,17 @@
 <template>
+  <TabsView></TabsView>
   <ModalView></ModalView>
+  <ProgressView></ProgressView>
 </template>
 
 <script>
 import ModalView from "@/views/ModalView";
+import ProgressView from "@/views/ProgressView";
+import TabsView from "@/views/TabsView";
 
 export default {
   name: 'App',
-  components: {ModalView}
+  components: {TabsView, ProgressView, ModalView}
 }
 </script>
 
