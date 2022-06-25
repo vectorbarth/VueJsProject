@@ -1,18 +1,17 @@
 <template>
-<div class="tabs">
-  <ul class="tabs_header">
-    <li v-for="title in tabTitle" :key="title" @click="selectTitle = title" :class = "{selected: title === selectTitle}">
-      {{title}}
+  <ul class="nav nav-tabs">
+    <li class="nav-item" v-for="(tabTitle, index) in tabsTitle" :key="index" @click="!tabsDisableStatus[index] ? activeTabIndex = index : {}">
+      <a class="nav-link" :class="{active: index === activeTabIndex, disabled: tabsDisableStatus[index]}">{{ tabTitle }}</a>
     </li>
   </ul>
   <slot/>
-</div>
 </template>
 
 <script>
 import {ref, provide} from "vue";
 
 export default {
+  name: "b-tabs",
   props : {
     vertical: {
       type: Boolean,
@@ -32,43 +31,21 @@ export default {
     }
   },
   setup (props, { slots }) {
-    const tabTitle = ref(slots.default().map((tab) => tab.props.title))
-    const index = ref(slots.default().findIndex((tab) => tab.props.active))
-    const selectTitle = ref(tabTitle.value[index.value])
+    const tabsTitle = ref(slots.default().map((tab) => tab.props.title))
+    const tabsDisableStatus = ref(slots.default().map((tab) => tab.props.disabled !== undefined))
+    let activeTabIndex = ref(slots.default().findIndex((tab) => tab.props.active !== undefined))
 
-    provide("selectedTitle", selectTitle)
+    provide("tabsTitle", tabsTitle)
+    provide("activeTabIndex", activeTabIndex)
+
     return {
-      selectTitle,
-      tabTitle,
+      tabsTitle,
+      tabsDisableStatus,
+      activeTabIndex,
     }
-  },
-  name: "b-tabs"
+  }
 }
 </script>
 
 <style scoped>
-.btabs {
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-.tabs_header {
-  margin-bottom: 10px;
-  list-style: none;
-  padding: 0;
-  display: flex;
-}
-
-.tabs_header li {
-  width: 80px;
-  text-align: center;
-  padding: 10px 20px;
-  margin-right: 10px;
-  background-color: #ddd;
-}
-
-.tabs_header li.selected {
-  background-color: blue;
-  color: white;
-}
 </style>

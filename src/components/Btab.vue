@@ -1,12 +1,14 @@
 <template>
- <div class="tab-content" v-show="title === selectedTitle">
+ <div class="tab-content" v-if="title === tabsTitle[activeTabIndex]">
    <slot></slot>
  </div>
 </template>
 
 <script>
 import {inject } from 'vue'
+
 export default {
+  name: "b-tab",
   props: {
     title: {
       type: String
@@ -21,15 +23,15 @@ export default {
     }
   },
   setup () {
-    const selectedTitle = inject("selectedTitle")
+    const tabsTitle = inject("tabsTitle")
+    const activeTabIndex = inject("activeTabIndex")
     return {
-      selectedTitle
+      tabsTitle,
+      activeTabIndex
     }
-  },
-  name: "b-tab"
+  }
 }
 </script>
 
 <style scoped>
-
 </style>
