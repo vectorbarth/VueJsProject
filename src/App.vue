@@ -1,15 +1,21 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <b-tabs>
+    <b-tab title="first"> im the first tab</b-tab>
+    <b-tab title="Second" :active="true"> im the second tab</b-tab>
+    <b-tab title="Disabled"> trolled</b-tab>
+  </b-tabs>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import BTabs from "@/components/Btabs";
+import BTab from "@/components/Btab";
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    BTab,
+    BTabs,
   }
 }
 </script>
@@ -19,7 +25,6 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
 }
