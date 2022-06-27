@@ -3,7 +3,7 @@
     <div class="modal" tabindex="-1" role="dialog" v-if="showModal" :style="{ display: `${showModal ? 'block': 'hide'}` }">
       <div role="document" :class="[centeredClass, sizeClass]">
         <div class="modal-content">
-          <div class="modal-header" v-show="!hideFooter">
+          <div class="modal-header" v-show="!hideHeader">
             <h5 class="modal-title">{{ title }}</h5>
             <button type="button" class="close" @click="$emit('on-close')">
               <span aria-hidden="true">&times;</span>
