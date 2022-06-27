@@ -1,7 +1,7 @@
 <template>
   <ul class="nav nav-tabs">
     <li class="nav-item" v-for="(tabTitle, index) in tabsTitle" :key="index" @click="!tabsDisableStatus[index] ? activeTabIndex = index : {}">
-      <a class="nav-link" href="#" :class="{active: index === activeTabIndex, disabled: tabsDisableStatus[index]}">{{ tabTitle }}</a>
+      <a class="nav-link" href="#" :class="{active: index === activeTabIndex, disabled: tabsDisableStatus[index]}" :style="{pointerEvents: `${tabsDisableStatus[index] ? 'none' : 'auto'}`}">{{ tabTitle }}</a>
     </li>
   </ul>
   <slot/>
