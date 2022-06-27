@@ -1,6 +1,5 @@
 <template>
-  <div id="my-modal"></div>
-  <div>
+  <div id="my-modal">
     <button class="btn" @click="showModal = true">Launch centered modal</button>
     <b-modal id="modal-center" :showModal="showModal" centered title="This is the modal title" @on-close="closeModal">
       <p class="my-4">Vertically centered modal!</p>
