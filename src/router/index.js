@@ -3,19 +3,24 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
     {
+        path: '/',
+        name: 'Root',
+        component: () => import('../views/TabsView')
+    },
+    {
         path: '/Modal',
         name: 'Modal',
-        component: () => import('../views/ModalView.vue')
+        component: () => import('../views/ModalView')
     },
     {
         path: '/Tabs',
         name: 'Tabs',
-        component: () => import('../views/TabsView.vue')
+        component: () => import('../views/TabsView')
     },
     {
         path: '/Progress',
         name: 'Progress',
-        component: () => import('../views/ProgressView.vue')
+        component: () => import('../views/ProgressView')
     }
 ]
 
