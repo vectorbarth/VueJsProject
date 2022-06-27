@@ -5,7 +5,7 @@ const routes = [
     {
         path: '/',
         name: 'Root',
-        component: () => import('../views/TabsView')
+        component: () => import('../views/RootView')
     },
     {
         path: '/tabs',
