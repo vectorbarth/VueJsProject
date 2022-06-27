@@ -1,32 +1,20 @@
 <template>
-  <b-navbar> </b-navbar>
-  <b-tabs>
-    <b-tab title="first"> im the first tab</b-tab>
-    <b-tab title="Second" :active="true"> im the second tab</b-tab>
-    <b-tab title="Disabled"> trolled</b-tab>
-  </b-tabs>
+  <TabsView></TabsView>
+  <ModalView></ModalView>
+  <ProgressView></ProgressView>
 </template>
 
 <script>
-import BTabs from "@/components/Btabs";
-import BTab from "@/components/Btab";
-
+import ModalView from "@/views/ModalView";
+import ProgressView from "@/views/ProgressView";
+import TabsView from "@/views/TabsView";
 
 export default {
   name: 'App',
-  components: {
-    BTab,
-    BTabs,
-  }
+  components: {TabsView, ProgressView, ModalView}
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import "./css/bootstrap.css";
 </style>
