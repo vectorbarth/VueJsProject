@@ -18,6 +18,11 @@ const routes = [
         component: () => import('../views/ModalView')
     },
     {
+        path: '/dropdown',
+        name: 'Dropdown',
+        component: () => import('../views/DropdownView')
+    },
+    {
         path: '/progress',
         name: 'Progress',
         component: () => import('../views/ProgressView')
