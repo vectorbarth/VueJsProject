@@ -8,8 +8,8 @@ const routes = [
         component: () => import('../views/ModalView.vue')
     },
     {
-        path: '/Tab',
-        name: 'Tab',
+        path: '/Tabs',
+        name: 'Tabs',
         component: () => import('../views/TabsView.vue')
     },
     {

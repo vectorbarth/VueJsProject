@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: "BNavbar-item",
+  name: "b-nav-item",
   props : {
     href : {
       type : String,
@@ -19,5 +19,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>

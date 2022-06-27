@@ -13,11 +13,10 @@
 </template>
 
 <script>
-
   import {ref} from "vue";
 
   export default {
-  name: "BNavbar",
+  name: "b-navbar",
     setup (props, {slots}) {
       const navLinks = ref(slots.default().map((link)=> link.props.href))
       console.log(navLinks)
