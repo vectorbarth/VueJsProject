@@ -12,6 +12,7 @@ import {ref, provide} from "vue";
 
 export default {
   name: "b-tabs",
+  inheritAttrs: false,
   props : {
     vertical: {
       type: Boolean,

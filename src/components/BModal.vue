@@ -25,6 +25,7 @@
 <script>
 export default {
   name: "b-modal",
+  inheritAttrs: false,
   props: {
     showModal: {
       type: Boolean,
