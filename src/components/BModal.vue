@@ -1,6 +1,6 @@
 <template>
   <teleport to="#my-modal">
-    <div class="modal" tabindex="-1" role="dialog" v-if="showModal" :style="{ display: `${showModal ? 'block': 'hide'}` }">
+    <div class="modal" tabindex="-1" role="dialog" style="display:block" v-if="showModal">
       <div role="document" :class="[centeredClass, sizeClass]">
         <div class="modal-content">
           <div class="modal-header" v-show="!hideHeader">
