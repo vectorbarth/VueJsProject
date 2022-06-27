@@ -1,4 +1,5 @@
 <template>
+  <b-navbar> </b-navbar>
   <b-tabs>
     <b-tab title="first"> im the first tab</b-tab>
     <b-tab title="Second" :active="true"> im the second tab</b-tab>
