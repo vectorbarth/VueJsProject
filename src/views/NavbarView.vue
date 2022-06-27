@@ -1,12 +1,14 @@
 <template>
-  <b-navbar>
-    <b-navbar-nav>
-      <b-nav-item href="/tabs">Tabs</b-nav-item>
-      <b-nav-item href="/modal">Modal</b-nav-item>
-      <b-nav-item href="/dropdown">Dropdown</b-nav-item>
-      <b-nav-item href="/progress">Progress</b-nav-item>
-    </b-navbar-nav>
-  </b-navbar>
+  <div id="my-navbar">
+    <b-navbar>
+      <b-navbar-nav>
+        <b-nav-item href="/tabs">Tabs</b-nav-item>
+        <b-nav-item href="/modal">Modal</b-nav-item>
+        <b-nav-item href="/dropdown">Dropdown</b-nav-item>
+        <b-nav-item href="/progress">Progress</b-nav-item>
+      </b-navbar-nav>
+    </b-navbar>
+  </div>
 </template>
 
 <script>
