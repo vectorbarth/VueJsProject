@@ -8,17 +8,17 @@ const routes = [
         component: () => import('../views/TabsView')
     },
     {
-        path: '/Modal',
-        name: 'Modal',
-        component: () => import('../views/ModalView')
-    },
-    {
-        path: '/Tabs',
+        path: '/tabs',
         name: 'Tabs',
         component: () => import('../views/TabsView')
     },
     {
-        path: '/Progress',
+        path: '/modal',
+        name: 'Modal',
+        component: () => import('../views/ModalView')
+    },
+    {
+        path: '/progress',
         name: 'Progress',
         component: () => import('../views/ProgressView')
     }
