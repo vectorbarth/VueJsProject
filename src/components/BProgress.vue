@@ -1,6 +1,6 @@
 <template>
   <div class="progress">
-    <div class="progress-bar" role="progressbar" :style="{width: getProcessPercent() + '%'}" :aria-valuenow="value" :aria-valuemin="barMin" :aria-valuemax="barMax" :class="[variantClass, animatedClass, stripedClass]">
+    <div class="progress-bar" role="progressbar" :style="{width: getProcessPercent() + '%'}" :aria-valuenow="value" :aria-valuemin="barMin" :aria-valuemax="barMax" :class="[getVariantClass(), animatedClass, stripedClass]">
       <span v-if="showProgress">{{ getProcessPercent() }}%</span>
     </div>
   </div>
@@ -16,7 +16,7 @@ export default {
     },
     variant: {
       type: String,
-      required: true
+      default: "primary"
     },
     showProgress: {
       type: Boolean,
@@ -35,12 +35,6 @@ export default {
     return {
       barMin: 0,
       barMax: 100,
-      variantClass: {
-        "bg-success": this.variant === "success",
-        "bg-info": this.variant === "info",
-        "bg-warning": this.variant === "warning",
-        "bg-danger": this.variant === "danger",
-      },
       animatedClass: {
         "progress-bar-animated": this.animated
       },
@@ -50,6 +44,9 @@ export default {
     }
   },
   methods: {
+    getVariantClass() {
+      return "bg-" + this.variant
+    },
     getProcessPercent() {
       const res = Number(100 * Number(this.value) / (this.barMax - this.barMin));
       return Math.max(this.barMin, Math.min(res, this.barMax))
