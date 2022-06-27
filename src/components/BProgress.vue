@@ -1,7 +1,7 @@
 <template>
   <div class="progress">
     <div class="progress-bar" role="progressbar" :style="{width: getProcessPercent() + '%'}" :aria-valuenow="value" :aria-valuemin="barMin" :aria-valuemax="barMax" :class="[variantClass, animatedClass, stripedClass]">
-      <a v-if="showProgress">{{ getProcessPercent() }}%</a>
+      <span v-if="showProgress">{{ getProcessPercent() }}%</span>
     </div>
   </div>
 </template>
