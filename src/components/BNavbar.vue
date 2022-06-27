@@ -4,7 +4,7 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" v-if="navItems !== undefined">
       <ul class="navbar-nav mr-auto">
           <slot></slot>
       </ul>
@@ -13,18 +13,14 @@
 </template>
 
 <script>
-  import {ref} from "vue";
-
   export default {
-  name: "b-navbar",
+    name: "b-navbar",
     setup (props, {slots}) {
-      const navLinks = ref(slots.default().map((link)=> link.props.href))
-      console.log(navLinks)
+      const navItems = slots.default().find((node) => node.type.name === "b-navbar-nav")
       return {
-        navLinks,
+        navItems
       }
     }
-
 }
 </script>
 

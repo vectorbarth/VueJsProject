@@ -9,10 +9,10 @@
 <script>
 export default {
   name: "b-nav-item",
-  props : {
-    href : {
-      type : String,
-      required : true
+  props: {
+    href: {
+      type: String,
+      required: true
     }
   }
 }
