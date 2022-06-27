@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light" :class="[getVariantClass(), fixedClass, stickyClass]">
+  <nav class="navbar navbar-expand-lg navbar-light" :class="[getVariantClass(), fixedClass, stickyClass, typeClass]">
     <a class="navbar-brand" href="/">Navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -26,6 +26,10 @@
       variant: {
         type: String,
         default: "primary"
+      },
+      type: {
+        type: String,
+        default: "dark"
       }
     },
     methods : {
@@ -41,6 +45,10 @@
         },
         stickyClass: {
           "sticky": this.sticky
+        },
+        typeClass: {
+          "navbar-dark": this.type === "dark",
+          "navbar-light": this.type === "light"
         }
       }
     },

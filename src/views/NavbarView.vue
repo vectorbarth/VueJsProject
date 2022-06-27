@@ -1,6 +1,6 @@
 <template>
   <div id="my-navbar">
-    <b-navbar>
+    <b-navbar variant="info" type="dark">
       <b-navbar-nav>
         <b-nav-item href="/tabs">Tabs</b-nav-item>
         <b-nav-item href="/modal">Modal</b-nav-item>
