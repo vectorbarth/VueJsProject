@@ -1,17 +1,20 @@
 <template>
-  <TabsView></TabsView>
-  <ModalView></ModalView>
-  <ProgressView></ProgressView>
-</template>
+  <BNavbar>
+    <BNavbarItem href="/Tab"> tabs </BNavbarItem>
+    <BNavbarItem href="/Modal"> Modal </BNavbarItem>
+    <BNavbarItem href="/Progress"> Progress </BNavbarItem>
 
+  </BNavbar>
+  <RouterView></RouterView>
+</template>
 <script>
-import ModalView from "@/views/ModalView";
-import ProgressView from "@/views/ProgressView";
-import TabsView from "@/views/TabsView";
+
+import BNavbar from "@/components/BNavbar";
+import BNavbarItem from "@/components/BNavbar-item";
 
 export default {
   name: 'App',
-  components: {TabsView, ProgressView, ModalView}
+  components: {BNavbarItem, BNavbar}
 }
 </script>
 
