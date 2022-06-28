@@ -4,8 +4,10 @@
       <button class="btn dropdown-toggle" type="button" @click="onClick()" :class="[getVariantClass()]" v-if="!split">{{ text }}</button>
       <button type="button" class="btn" :class="[getVariantClass()]" v-if="split">{{ text }}</button>
       <button type="button" class="btn dropdown-toggle dropdown-toggle-split" @click="onClick()" :class="[getVariantClass()]" v-if="split"></button>
-      <div class="dropdown-menu" style="display:block" v-if="menuIsOpen" :class="[dropWayClass]">
-        <slot></slot>
+      <div class="dropdown-menu-div" :class="[dropWayClass]">
+        <div class="dropdown-menu" style="display:block" v-if="menuIsOpen" :class="[dropWayClass]">
+          <slot></slot>
+        </div>
       </div>
     </div>
   </div>
@@ -77,4 +79,21 @@ export default {
 </script>
 
 <style scoped>
+.dropdown-menu-div.dropup {
+  rotate: 180deg;
+}
+.dropdown-menu.dropup {
+  top: 100%;
+  left: 0;
+  rotate: 180deg;
+  margin-top: 0.125rem;
+}
+.dropdown-menu.dropright {
+  top: 0;
+  left: 100%;
+}
+.dropdown-menu.dropleft {
+  top: 0;
+  left: -100%;
+}
 </style>
