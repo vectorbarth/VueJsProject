@@ -8,6 +8,7 @@
         <b-nav-item href="/table">Table</b-nav-item>
         <b-nav-item href="/progress">Progress</b-nav-item>
         <b-nav-item href="/breadcrumb">Breadcrumb</b-nav-item>
+        <b-nav-item href="/skeleton">Skeleton</b-nav-item>
       </b-navbar-nav>
     </b-navbar>
   </div>

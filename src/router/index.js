@@ -36,6 +36,11 @@ const routes = [
         path: '/breadcrumb',
         name: 'Breadcrumb',
         component: () => import('../views/BreadcrumbView')
+    },
+    {
+        path: '/skeleton',
+        name: 'Skeleton',
+        component: () => import('../views/SkeletonView')
     }
 ]
 
