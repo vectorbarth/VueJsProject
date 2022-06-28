@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import BTabs from "@/components/Btabs";
-import BTab from "@/components/Btab";
+import BTabs from "@/components/BTabs";
+import BTab from "@/components/BTab";
 
 export default {
   name: "TabsView",
