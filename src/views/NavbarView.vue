@@ -7,6 +7,7 @@
         <b-nav-item href="/dropdown">Dropdown</b-nav-item>
         <b-nav-item href="/progress">Progress</b-nav-item>
         <b-nav-item href="/breadcrumb">Breadcrumb</b-nav-item>
+        <b-nav-item href="/table">Table</b-nav-item>
       </b-navbar-nav>
     </b-navbar>
   </div>
@@ -19,7 +20,7 @@ import BNavbarNav from "@/components/BNavbarNav";
 
 export default {
   name: "NavbarView",
-  components: {BNavbarNav, BNavbar, BNavItem}
+  components: { BNavbarNav, BNavbar, BNavItem }
 }
 </script>
 

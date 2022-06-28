@@ -31,6 +31,10 @@ const routes = [
         path: '/breadcrumb',
         name: 'Breadcrumb',
         component: () => import('../views/BreadcrumbView')
+    }, {
+        path: '/table',
+        name: 'Table',
+        component: () => import('../views/TableView')
     }
 ]
 
