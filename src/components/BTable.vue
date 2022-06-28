@@ -1,11 +1,15 @@
 <template>
-    <table>
+    <table class="table" :class="[stripedClass, smallClass]">
         <thead>
-            <th v-for="field in fields" :key="field.key">{{ getLabel(field) }}</th>
+            <tr>
+                <th v-for="field in fields" :key="field.key" :class="getVariantClass(field)">{{ getLabel(field) }}
+                </th>
+            </tr>
         </thead>
         <tbody>
             <tr v-for="(item, index) in items" :key="index">
-                <td v-for="field in fields" :key="field.key"> {{ item[field.key] }}</td>
+                <td v-for="field in fields" :key="field.key" :class="getVariantClass(field)"> {{ item[field.key] }}
+                </td>
             </tr>
         </tbody>
     </table>
@@ -29,7 +33,7 @@ export default {
         },
         small: {
             type: Boolean,
-            default: Boolean
+            default: false
         },
         fields: {
             type: Array,
@@ -45,8 +49,8 @@ export default {
         }
     },
     methods: {
-        getVariantClass() {
-            return "bg-" + this.variant
+        getVariantClass(field) {
+            return typeof field.variant === 'undefined' ? undefined : "table-" + field.variant
         },
         getLabel(field) {
             return field.label || field.key.split('_').map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(' ');
@@ -58,12 +62,11 @@ export default {
                 "fixed-bottom": this.fixed === "bottom",
                 "fixed-top": this.fixed === "top"
             },
-            stickyClass: {
-                "sticky": this.sticky
+            smallClass: {
+                "table-sm": this.small
             },
-            typeClass: {
-                "navbar-dark": this.type === "dark",
-                "navbar-light": this.type === "light"
+            stripedClass: {
+                "table-striped": this.striped
             }
         }
     }/* ,
