@@ -1,24 +1,97 @@
-# vue-project
+# Projet final VueJS
 
-## Project setup
+### Contribueurs
+* Emile Barthélèmy ([emile.barthelemy@epita.fr]())
+* Mathis Aymonin ([mathis.aymonin@epita.fr]())
+* Théo Golgevit ([theo.golgevit@epita.fr]())
+
+### Commandes utiles
+
+#### Setup du projet
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+#### Lancement du serveur
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
+#### Execution du linter
 ```
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Travail réalisé
+
+|     | MISC            |
+|:---:|-----------------|
+|  ✅  | Setup ESLint    |
+|  ✅  | Setup Babel     |
+|  ✅  | Setup un README |
+
+|     | TABS     |
+|:---:|----------|
+|  ❌  | vertical |
+|  ❌  | align    |
+|  ❌  | card     |
+|  ❌  | end      |
+|  ✅  | title    |
+|  ✅  | active   |
+|  ✅  | disabled |
+
+|     | MODAL       |
+|:---:|-------------|
+|  ✅  | showModal   |
+|  ✅  | centered    |
+|  ✅  | title       |
+|  ✅  | size        |
+|  ✅  | hide-header |
+|  ✅  | hide-footer |
+
+|     | DROPDOWN  |
+|:---:|-----------|
+|  ✅  | dropup    |
+|  ✅  | dropright |
+|  ✅  | dropleft  |
+|  ✅  | split     |
+|  ✅  | variant   |
+|  ✅  | active    |
+|  ✅  | disabled  |
+
+|     | TABLE    |
+|:---:|----------|
+|  ✅  | striped  |
+|  ✅  | hover    |
+|  ✅  | items    |
+|  ✅  | small    |
+|  ✅  | sortable |
+|  ✅  | label    |
+|  ✅  | variant  |
+
+|     | PROGRESS      |
+|:---:|---------------|
+|  ✅  | value         |
+|  ✅  | variant       |
+|  ✅  | show-progress |
+|  ✅  | animated      |
+|  ✅  | striped       |
+
+|     | BREADCRUMB |
+|:---:|------------|
+|  ✅  | active     |
+|  ✅  | href       |
+|  ✅  | text       |
+
+|     | NAVBAR  |
+|:---:|---------|
+|  ✅  | fixed   |
+|  ✅  | sticky  |
+|  ✅  | variant |
+
+|     | SKELETON  |
+|:---:|-----------|
+|  ✅  | animation |
+|  ✅  | height    |
+|  ✅  | width     |
+|  ✅  | variant   |
