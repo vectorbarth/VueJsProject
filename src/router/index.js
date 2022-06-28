@@ -23,6 +23,11 @@ const routes = [
         component: () => import('../views/DropdownView')
     },
     {
+        path: '/table',
+        name: 'Table',
+        component: () => import('../views/TableView')
+    },
+    {
         path: '/progress',
         name: 'Progress',
         component: () => import('../views/ProgressView')
@@ -31,10 +36,6 @@ const routes = [
         path: '/breadcrumb',
         name: 'Breadcrumb',
         component: () => import('../views/BreadcrumbView')
-    }, {
-        path: '/table',
-        name: 'Table',
-        component: () => import('../views/TableView')
     }
 ]
 

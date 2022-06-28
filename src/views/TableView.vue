@@ -1,11 +1,12 @@
 <template>
-  <div>
+  <div class="my-table">
     <b-table striped hover :items="items" :fields="fields"></b-table>
   </div>
 </template>
 
 <script>
 import BTable from "@/components/BTable";
+
 export default {
   name: "TableView",
   components: { BTable },
@@ -26,3 +27,6 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+</style>
