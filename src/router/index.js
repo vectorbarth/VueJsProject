@@ -26,6 +26,11 @@ const routes = [
         path: '/progress',
         name: 'Progress',
         component: () => import('../views/ProgressView')
+    },
+    {
+        path: '/breadcrumb',
+        name: 'Breadcrumb',
+        component: () => import('../views/BreadcrumbView')
     }
 ]
 
