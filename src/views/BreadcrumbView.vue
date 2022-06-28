@@ -1,5 +1,7 @@
 <template>
-<b-breadcrumb :items="items"></b-breadcrumb>
+  <div id="my-breadcrumb">
+    <b-breadcrumb :items="items"></b-breadcrumb>
+  </div>
 </template>
 
 <script>
