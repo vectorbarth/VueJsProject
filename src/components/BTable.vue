@@ -1,5 +1,5 @@
 <template>
-    <table class="table" :class="[stripedClass, smallClass]">
+    <table class="table" :class="[stripedClass, smallClass, hoverClass]">
         <thead>
             <tr>
                 <th v-for="field in fields" :key="field.key" :class="getVariantClass(field)">{{ getLabel(field) }}
@@ -58,9 +58,8 @@ export default {
     },
     data() {
         return {
-            fixedClass: {
-                "fixed-bottom": this.fixed === "bottom",
-                "fixed-top": this.fixed === "top"
+            hoverClass: {
+                "table-hover": this.hover,
             },
             smallClass: {
                 "table-sm": this.small
