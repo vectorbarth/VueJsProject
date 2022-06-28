@@ -2,7 +2,7 @@
   <div class="my-skeleton">
     <b-skeleton width="85%"></b-skeleton>
     <b-skeleton width="55%"></b-skeleton>
-    <b-skeleton width="70%"></b-skeleton>
+    <b-skeleton width="70%" variant="warning"></b-skeleton>
   </div>
 </template>
 
