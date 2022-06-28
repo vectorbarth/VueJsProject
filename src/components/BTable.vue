@@ -2,12 +2,15 @@
     <table class="table" :class="[stripedClass, smallClass, hoverClass]">
         <thead>
             <tr>
-                <th v-for="field in fields" :key="field.key" :class="getVariantClass(field)">{{ getLabel(field) }}
+                <th v-for="field in fields" :key="field.key" :class="getVariantClass(field)"
+                    :aria-sort="getSortIcon(field)" @click="onHeaderClick(field.key)">
+                    <div>{{ getLabel(field) }} </div>
+                    <span class="sr-only" v-if="field.sortable"> (Click to sort {{ getSrLabel(field.key) }})</span>
                 </th>
             </tr>
         </thead>
         <tbody>
-            <tr v-for="(item, index) in items" :key="index">
+            <tr v-for="(item, index) in sortedItems" :key="index">
                 <td v-for="field in fields" :key="field.key" :class="getVariantClass(field)"> {{ item[field.key] }}
                 </td>
             </tr>
@@ -16,6 +19,7 @@
 </template>
 
 <script>
+import { ref } from 'vue';
 export default {
     name: "b-table",
     props: {
@@ -54,6 +58,25 @@ export default {
         },
         getLabel(field) {
             return field.label || field.key.split('_').map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(' ');
+        },
+        getSortIcon(field) {
+            if (!field.sortable) return null;
+            if (this.sort.key === field.key) return this.sort.asc ? 'ascending' : 'descending';
+            return 'none';
+        },
+        onHeaderClick(key) {
+            if (this.fields.find(f => f.key === key).sortable) {
+                if (this.sort.key === key) {
+                    this.sort.asc = !this.sort.asc;
+                } else {
+                    this.sort.key = key
+                    this.sort.asc = true;
+                }
+                this.sortedItems.sort((a, b) => this.sort.asc ? a[this.sort.key] > b[this.sort.key] : a[this.sort.key] < b[this.sort.key]);
+            }
+        },
+        getSrLabel(key) {
+            return this.sort.key !== key || !this.sort.asc ? 'ascending' : 'descending';
         }
     },
     data() {
@@ -66,15 +89,16 @@ export default {
             },
             stripedClass: {
                 "table-striped": this.striped
-            }
+            },
+            sort: { key: "", asc: true },
         }
-    }/* ,
-    setup(props, { slots }) {
-        const navItems = slots.default().find((node) => node.type.name === "b-navbar-nav")
+    },
+    setup(props) {
+        const sortedItems = ref(props.items);
         return {
-            navItems
+            sortedItems
         }
-    } */
+    }
 }
 </script>
 
